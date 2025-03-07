@@ -13,13 +13,15 @@ def save_uploaded_file(uploaded_file):
     with open(file_path, "wb") as f:
         f.write(uploaded_file.getbuffer())
     return file_path
-
-if uploaded_file:
+if "button_pressed" not in st.session_state:
+    st.session_state.button_pressed=False
+if uploaded_file or st.session_state.button_pressed:
     saved_video_path = save_uploaded_file(uploaded_file)
 
 
 
-    if st.button("Process Video"):
+    if st.button("Process Video") or st.session_state.button_pressed:
+        st.session_state.button_pressed=True
         text=st.empty()
         text.write("Processing Video...")
         progress=st.progress(0)
