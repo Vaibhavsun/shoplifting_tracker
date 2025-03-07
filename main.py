@@ -26,10 +26,12 @@ if uploaded_file:
         saving_annotated_video(saved_video_path,progress_bar=progress)
         text.write("Completed..")
         st.success("Video processed successfully!")
-        with open('out.mp4', "rb") as f:
-            st.download_button("Download Anotated Video", f, file_name="processed_video.mp4", mime="video/mp4")
 
+        x1=st.empty()
+        with open('out.mp4', "rb") as f:
+            x1.download_button("Download Anotated Video", f, file_name="processed_video.mp4", mime="video/mp4")
+        x2=st.empty()
         with open('out.csv', "rb") as f:
-            st.download_button("Download CSV", f, file_name="data.csv", mime="text/csv")
+            x2.download_button("Download CSV", f, file_name="data.csv", mime="text/csv")
 
 
