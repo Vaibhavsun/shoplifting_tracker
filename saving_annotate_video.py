@@ -4,7 +4,6 @@ from shoplifting_classifier import output
 import pandas as pd
 import os
 import streamlit as st
-load_dotenv()
 CLIENT = InferenceHTTPClient(
     api_url="https://detect.roboflow.com",
     api_key=st.secrets["ROBOFLOW_API_KEY"]
