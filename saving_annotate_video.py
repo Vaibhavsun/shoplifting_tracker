@@ -2,12 +2,12 @@ from inference_sdk import InferenceHTTPClient
 import supervision as sv
 from shoplifting_classifier import output
 import pandas as pd
-from dotenv import load_dotenv
 import os
+import streamlit as st
 load_dotenv()
 CLIENT = InferenceHTTPClient(
     api_url="https://detect.roboflow.com",
-    api_key=os.getenv("ROBOFLOW_API_KEY")
+    api_key=st.secrets["ROBOFLOW_API_KEY"]
 )
 def extract_person_coordinate(img):
 
