@@ -21,11 +21,12 @@ if uploaded_file or st.session_state.button_pressed:
 
 
     if st.button("Process Video") or st.session_state.button_pressed:
-        st.session_state.button_pressed=True
         text=st.empty()
         text.write("Processing Video...")
         progress=st.progress(0)
-        saving_annotated_video(saved_video_path,progress_bar=progress)
+        if st.session_state.button_pressed==False:
+            saving_annotated_video(saved_video_path,progress_bar=progress)
+        st.session_state.button_pressed=True
         text.write("Completed..")
         st.success("Video processed successfully!")
 
