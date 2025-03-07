@@ -4,4 +4,5 @@ pandas
 opencv-python
 tensorflow==2.15.1
 supervision
+python-dotenv
 streamlit
