@@ -24,5 +24,8 @@ model = load_model()
 def output(image):
     inp=cv2.resize(image,(224,224))
     inp=inp.reshape(1,224,224,3)
-    out=np.argmax(model.predict(inp)[0])
+    # out=np.argmax(model.predict(inp)[0])
+    prob = model.predict(inp)[0][0]  
+    print(prob)
+    out=int(prob>0.5)
     return out
