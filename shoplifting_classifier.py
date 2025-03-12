@@ -17,7 +17,7 @@ import streamlit as st
 
 @st.cache_resource
 def load_model():
-    return tf.keras.models.load_model("model.h5")
+    return tf.keras.models.load_model("shoplifting_model.h5")
 
 model = load_model()
 
