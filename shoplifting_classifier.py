@@ -23,7 +23,6 @@ model = load_model()
 
 def output(image):
     inp=cv2.resize(image,(224,224))
-    inp=inp*1./255
     inp=inp.reshape(1,224,224,3)
     # out=np.argmax(model.predict(inp)[0])
     prob = model.predict(inp) 
