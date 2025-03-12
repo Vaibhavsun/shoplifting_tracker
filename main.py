@@ -2,9 +2,9 @@ import streamlit as st
 import tempfile
 import os
 from saving_annotate_video import saving_annotated_video
-import subprocess
-if not os.path.isfile('model.h5'):
-    subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/Vaibhavsun/shoplifting_tracker/blob/main/model.h5"'], shell=True)
+# import subprocess
+# if not os.path.isfile('model.h5'):
+#     subprocess.run(['curl --output model.h5 "https://media.githubusercontent.com/media/Vaibhavsun/shoplifting_tracker/blob/main/model.h5"'], shell=True)
 st.title("ShopLifting Tracking and Detection")
 
 uploaded_file = st.file_uploader("Upload a video", type=["mp4"])
